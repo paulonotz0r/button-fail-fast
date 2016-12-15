@@ -1,0 +1,25 @@
+<html ng-app="buttonFailFastApp">
+<head>
+  <script type='text/javascript' src="node_modules/angular/angular.js"></script>
+  <script type='text/javascript' src="app.js"></script>
+</head>
+<body ng-controller="buttonFailFastController">
+  <div>
+    <h1>Button Fail Fast!</h1>
+
+    <div class="row">
+      <button type="button" ng-click="withDelay()">
+        withDelay!
+      </button>
+
+      <button type="button" ng-click="withoutDelay()">
+        withoutDelay!
+      </button>
+    </div>
+
+    <div class="row">
+      {{response}}
+    </div>
+  </div>
+</body>
+</html>
