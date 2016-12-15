@@ -7,6 +7,10 @@ function createServer () {
   const server = http.createServer((request, response) => {
     if (url.parse(request.url).pathname === '/withDelay') {
       response.writeHead(200, {'content-type': 'application-json'});
+
+      let currentTime = new Date().getTime();
+      while (currentTime + 5000 >= new Date().getTime()) { }
+
       response.end('With delay.');
     } else if (url.parse(request.url).pathname === '/withoutDelay') {
       response.writeHead(200, {'content-type': 'application-json'});
